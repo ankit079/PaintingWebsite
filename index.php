@@ -7,12 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	<link href="http://localhost/PaintingWebsite/public/css/styles.css"  media="screen" rel="stylesheet">
+	<link href="styles.css"  media="screen" rel="stylesheet">
 </head>
 
 <body>
 <?php
-// header('Location: ../app/controllers/PaintingController.php');
+//  header('Location: PaintingController.php');
 ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

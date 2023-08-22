@@ -1,5 +1,5 @@
 <?php
-require_once '../models/PaintingModel.php';
+require_once 'PaintingModel.php';
 
 $action = $_GET['action'] ?? '';
 
@@ -13,9 +13,9 @@ if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $style = $_POST['style'];
     $image = $_POST['image'];
     $model->addPainting($title, $finished, $media, $artist, $style, $image);
-    header('Location: ../public/index.php');
+    header('Location: index.php');
 } else {
     $paintings = $model->getAllTasks();
-    require '../views/view_paintings.php';
+    require 'view_paintings.php';
 }
 ?>

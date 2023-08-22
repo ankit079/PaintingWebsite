@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link href="http://localhost/PaintingWebsite/public/css/styles.css"  media="screen" rel="stylesheet">
+        <link href="styles.css"  media="screen" rel="stylesheet">
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -31,7 +31,7 @@
 		</div>
 	  </nav>
     <h1>Add a New Painting</h1>
-	<form action="../controllers/PaintingController.php?action=add" method="post">
+	<form action="PaintingController.php?action=add" method="post">
         <label for="title">Title: </label>
         <input type="text" name="title"><br>
         <label for="finished">Finished: </label>
