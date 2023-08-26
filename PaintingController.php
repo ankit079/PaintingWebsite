@@ -11,11 +11,28 @@ if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $media = $_POST['media'];
     $artist = $_POST['artist'];
     $style = $_POST['style'];
-    $image = $_POST['image'];
+    $image = file_get_contents($_FILES["image"]["tmp_name"], 'r');
     $model->addPainting($title, $finished, $media, $artist, $style, $image);
-    header('Location: index.php');
-} else {
-    $paintings = $model->getAllTasks();
-    require 'view_paintings.php';
-}
+    header('Location: view_paintings.php');
+} 
+
+if ($action === 'edit' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id= $_POST['id'];
+    $title = $_POST['title'];
+    $finished = $_POST['finished'];
+    $media = $_POST['media'];
+    $artist = $_POST['artist'];
+    $style = $_POST['style'];
+    $image = file_get_contents($_FILES["image"]["tmp_name"], 'r');
+    $model->updatePainting($id,$title, $finished, $media, $artist, $style, $image);
+    header('Location: view_paintings.php');
+} 
+
+if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    printf("it reached here");
+    $id= $_GET['id'];
+    $model->deletePainting($id);
+    header('Location: view_paintings.php');
+} 
+
 ?>

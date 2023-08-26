@@ -22,4 +22,3 @@ foreach ($paintings as $painting) {
 }
 
 echo "Records inserted successfully";
-  
