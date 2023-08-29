@@ -83,13 +83,15 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <h4><?php echo $item['style']; ?></h4>
                                     </div>
                                 </div>
+                                <div class="row">
+                                        <form action="view_paintings.php" method="POST">
+                                            <input type="submit" class="btn btn-primary" name="return" value="Return to Paintings" />
+                                        </form>   
+                                </div>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <form action="view_paintings.php" method="POST">
-                    <input type="submit" name="return" class="button" value="Return to Paintings" />
-                </form>
             </div>
         </div>
     </div>
