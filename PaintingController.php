@@ -14,6 +14,7 @@ if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $image = file_get_contents($_FILES["image"]["tmp_name"], 'r');
     $model->addPainting($title, $finished, $media, $artist, $style, $image);
     header('Location: view_paintings.php');
+    exit();
 } 
 
 if ($action === 'edit' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,6 +27,7 @@ if ($action === 'edit' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $image = file_get_contents($_FILES["image"]["tmp_name"], 'r');
     $model->updatePainting($id,$title, $finished, $media, $artist, $style, $image);
     header('Location: view_paintings.php');
+    exit();
 } 
 
 if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,6 +35,7 @@ if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $id= $_GET['id'];
     $model->deletePainting($id);
     header('Location: view_paintings.php');
+    exit();
 } 
 
 ?>

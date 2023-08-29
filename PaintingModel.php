@@ -30,5 +30,19 @@ class PaintingModel {
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);    
     }
+
+    public function getPaintingById($id){
+        global $pdo;
+        try {
+            // Prepare and execute the SQL query to fetch items
+            $query = "SELECT * FROM painting WHERE id=:id";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $item = $stmt->fetch(PDO::FETCH_ASSOC);
+          } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
 ?>

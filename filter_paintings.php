@@ -1,15 +1,40 @@
 <?php
 include_once 'db.php';
 
-try {
-  // Prepare and execute the SQL query to fetch items
-  $stmt = $pdo->query("SELECT * FROM painting");
-  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-  echo "Error: " . $e->getMessage();
+// Get the selected style from the form
+if (isset($_POST['style'])) {
+    $selectedStyle = $_POST['style'];  
+    try {
+        // Prepare and execute the SQL query to fetch items
+        $query = "SELECT * FROM painting WHERE style = :style";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':style', $selectedStyle); 
+        $stmt->execute();
+      //    $stmt = $pdo->query($sql);
+        $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+      }  
 }
+
+// Get the selected artist from the form
+if (isset($_POST['artist'])) {
+    $selectedArtist = $_POST['artist'];  
+    try {
+        // Prepare and execute the SQL query to fetch items
+        $query = "SELECT * FROM painting WHERE artist = :artist";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':artist', $selectedArtist); 
+        $stmt->execute();
+      //    $stmt = $pdo->query($sql);
+        $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+      }  
+}
+
 // Close the connection
-$pdo = null;
+ $pdo = null;
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +53,7 @@ $pdo = null;
   <?php include 'nav_bar.php'; ?>
   <div class="container">
     <div class="row">
-      <h1>Items List</h1>
+    <h1>Items List</h1>
       <div class="col-12">
         <table class="table table-striped">
           <thead>
@@ -57,7 +82,7 @@ $pdo = null;
                     <input type="submit" name="Edit" class="button" value="Edit" />
                   </form>
                   <form action="PaintingController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Delete" class="button" value="Delete" />
+                    <input type="submit" name="Delete" class="button" value="Delete"/>
                   </form>
                 </td>
               </tr>
@@ -68,5 +93,4 @@ $pdo = null;
     </div>
   </div>
 </body>
-
 </html>

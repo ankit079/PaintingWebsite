@@ -15,15 +15,15 @@
     <h1>Add a New Painting</h1>
     <form action="PaintingController.php?action=add" enctype="multipart/form-data" method="POST">
         <label for="title">Title: </label>
-        <input type="text" name="title" id="title"><br>
+        <input type="text" name="title" id="title" placeholder="Enter Title"><br>
         <label for="finished">Finished: </label>
-        <input type="text" name="finished" id="finished"><br>
+        <input type="text" name="finished" id="finished" placeholder="Enter Finished Date"><br>
         <label for="media">Media: </label>
-        <input type="text" name="media" id="media"><br>
+        <input type="text" name="media" id="media" placeholder="Enter media"><br>
         <label for="artist">Artist: </label>
-        <input type="text" name="artist" id="artist"><br>
+        <input type="text" name="artist" id="artist" placeholder="Enter artist"><br>
         <label for="style">Style: </label>
-        <input type="text" name="style" id="style"><br>
+        <input type="text" name="style" id="style" placeholder="Enter style"><br>
         <label for="image">Image: </label>
         <input type="file" name="image" id="image"><br>
         <input type="submit" value="Add Painting" name="submit">
