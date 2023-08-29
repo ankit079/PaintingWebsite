@@ -12,6 +12,7 @@ $paintings[] = [
               'style' => 'Impressionism',
               'image' => file_get_contents("http://localhost/PaintingWebsite/images/gif_500_wide/gif_500_wide/baldumoulindelagalette.gif")
               ];
+              
 
 
 $sql = "INSERT INTO painting(title, finished, media, artist, style, image) VALUES (:title, :finished, :media, :artist, :style, :image)";

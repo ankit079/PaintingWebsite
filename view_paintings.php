@@ -56,8 +56,8 @@ $pdo = null;
                   <form action="edit_painting.php?id=<?php echo $item['id']; ?>" method="POST">
                     <input type="submit" name="Edit" class="button" value="Edit" />
                   </form>
-                  <form action="PaintingController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Delete" class="button" value="Delete" />
+                  <form onsubmit="return confirm('Please confirm you want to delete <?php echo $item['title']; ?>?')" action="PaintingController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
+                    <input type="submit" name="Delete" class="button" id="delete" value="Delete" />
                   </form>
                 </td>
               </tr>

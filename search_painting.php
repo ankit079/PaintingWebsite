@@ -28,40 +28,68 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <h1>Items List</h1>
             <div class="col-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Finished</th>
-                            <th scope="col">Media</th>
-                            <th scope="col">Artist</th>
-                            <th scope="col">Style</th>
-                            <th scope="col">Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($items as $item) : ?>
-                            <tr>
-                                <td><?php echo $item['id']; ?></td>
-                                <td><?php echo $item['title']; ?></td>
-                                <td><?php echo $item['finished']; ?></td>
-                                <td><?php echo $item['media']; ?></td>
-                                <td><?php echo $item['artist']; ?></td>
-                                <td><?php echo $item['style']; ?></td>
-                                <td><img src="data:image/jpeg;base64,<?= base64_encode($item['image']); ?>" width="100" height="100"></td>
-                                <td>
-                                    <form action="edit_painting.php?id=<?php echo $item['id']; ?>" method="POST">
-                                        <input type="submit" name="Edit" class="button" value="Edit" />
-                                    </form>
-                                    <form action="PaintingController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
-                                        <input type="submit" name="Delete" class="button" value="Delete" />
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <?php foreach ($items as $item) : ?>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <img src="data:image/jpeg;base64,<?= base64_encode($item['image']); ?>">
+                            </div>
+                            <div class="col-sm">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>ID</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['id']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>Title</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['title']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>Finished</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['finished']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>Media</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['media']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>Artist</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['artist']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h4>Style</h4>
+                                    </div>
+                                    <div class="col-sm">
+                                        <h4><?php echo $item['style']; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                <form action="view_paintings.php" method="POST">
+                    <input type="submit" name="return" class="button" value="Return to Paintings" />
+                </form>
             </div>
         </div>
     </div>
