@@ -12,7 +12,7 @@
 			</li>
 		</ul>
 		<form action="filter_paintings.php" method="post">
-        <label for="style">Filter by Style</label>
+        <label id="nav-filter-label" for="style">Filter by Style</label>
         <select name="style" id="style">
             <option value="Impressionism">Impressionism</option>
             <option value="Mannerism">Mannerism</option>
@@ -26,7 +26,7 @@
 		<button type="submit">Filter</button>
 		</form>
 		<form action="filter_paintings.php" method="post">
-		<label for="artist">Filter by Artist</label>
+		<label id="nav-filter-label" for="artist">Filter by Artist</label>
         <select name="artist" id="artist">
             <option value="August Renoir">August Renoir</option>
             <option value="Michelangelo">Michelangelo</option>
@@ -41,7 +41,7 @@
         <button type="submit">Filter</button>
 		</form>
 		<form role="search" action="search_painting.php" method="POST">
-			<input class="form-control" name="search_title" id="search_title" type="text" placeholder="Search Painting" aria-label="Search">
+			<input class="form-control" name="search_text" id="search_text" type="text" placeholder="Search Painting" aria-label="Search">
 		</form>
 	</div>
 </nav>

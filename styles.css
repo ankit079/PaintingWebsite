@@ -27,5 +27,8 @@ h5 {
 button {
     color: #0a58ca;
     border: white;
+}
 
+#nav-filter-label{
+    color:  white;
 }

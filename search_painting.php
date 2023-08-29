@@ -1,9 +1,9 @@
 <?php
 include_once 'db.php';
-$searchTitle = trim($_POST["search_title"]);
-$query = "SELECT * FROM painting WHERE title LIKE :keyword";
+$searchText = trim($_POST["search_text"]);
+$query = "SELECT * FROM painting WHERE title LIKE :keyword OR artist LIKE :keyword";
 $stmt = $pdo->prepare($query);
-$stmt->bindValue(':keyword', '%' . $searchTitle . '%', PDO::PARAM_STR);
+$stmt->bindValue(':keyword', '%' . $searchText . '%', PDO::PARAM_STR);
 $stmt->execute();
 
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -96,5 +96,4 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </body>
-
 </html>
