@@ -31,7 +31,6 @@ if ($action === 'edit' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 } 
 
 if ($action === 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    printf("it reached here");
     $id= $_GET['id'];
     $model->deletePainting($id);
     header('Location: view_paintings.php');
