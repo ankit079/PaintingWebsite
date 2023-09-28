@@ -14,5 +14,14 @@ CREATE TABLE IF NOT EXISTS `painting` (
             `image` MEDIUMBLOB NOT NULL
 ) 
 
+-- Create a table artist within the database
+
+CREATE TABLE IF NOT EXISTS `artist` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `artist_name` char(100) NOT NULL,
+    `lifespan` char(50) NOT NULL,
+      `nationality` char(50) NOT NULL,
+	        `portrait` MEDIUMBLOB NOT NULL
+) 
 
 

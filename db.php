@@ -2,7 +2,7 @@
 // Configure database connection
 $db_host = 'localhost';
 $db_name = 'acme';
-$db_user = '30074802';
+$db_user = 'root';
 $db_pass = '';
 
 try {

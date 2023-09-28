@@ -8,7 +8,13 @@
 				<a class="nav-link" href="view_paintings.php">Paintings</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="view_artists.php">Artists</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="add_painting.php">Add Paintings</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="add_artist.php">Add Artists</a>
 			</li>
 		</ul>
 		<form action="filter_paintings.php" method="post">
@@ -25,6 +31,7 @@
         </select>
 		<button type="submit">Filter</button>
 		</form>
+		
 		<form action="filter_paintings.php" method="post">
 		<label id="nav-filter-label" for="artist">Filter by Artist</label>
         <select name="artist" id="artist">
@@ -40,8 +47,35 @@
         </select>
         <button type="submit">Filter</button>
 		</form>
+		
+		<form action="filter_artists.php" method="post">
+		<label id="nav-filter-label" for="lifespan">Filter by Period</label>
+		<select name="lifespan" id="lifespan">
+		<option value="1400">1400s</option>
+		<option value="1600">1600s</option>
+		<option value="1800">1800s</option>
+		<option value="1900">1900s</option>
+		</select>
+		<button type="submit">Filter</button>
+		</form>
+		
+		<form action="filter_artists.php" method="post">
+		<label id="nav-filter-label" for="nationality">Filter by Nationality</label>
+		<select name="nationality" id="nationality">
+			<option value="French">French</option>
+			<option value="Italian">Italian</option>
+			<option value="Dutch">Dutch</option>
+			<option value="Spanish">Spanish</option>
+		</select>
+		<button type="submit">Filter</button>
+		</form>	
+		
 		<form role="search" action="search_painting.php" method="POST">
 			<input class="form-control" name="search_text" id="search_text" type="text" placeholder="Search Painting" aria-label="Search">
+		</form>
+		
+		<form role="search" action="search_artist.php" method="POST">
+			<input class="form-control" name="search_text" id="search_text" type="text" placeholder="Search Artist" aria-label="Search">
 		</form>
 	</div>
 </nav>
