@@ -53,7 +53,7 @@ if (isset($_POST['artist'])) {
   <?php include 'nav_bar.php'; ?>
   <div class="container">
     <div class="row">
-    <h1>Items List</h1>
+    <h1>Paintings</h1>
       <div class="col-12">
         <table class="table table-striped">
           <thead>
@@ -65,6 +65,7 @@ if (isset($_POST['artist'])) {
               <th scope="col">Artist</th>
               <th scope="col">Style</th>
               <th scope="col">Image</th>
+			  <th scope="col"></th>
             </tr>
           </thead>
           <tbody>

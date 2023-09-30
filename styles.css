@@ -1,6 +1,22 @@
+/* Home, Paintings, Artists, Add Paintings, Add Artists */
 nav .nav li a {
     color: white;
+	display: inline-block;
+	padding: 10px;
+	margin-right: 10px;
+	text-align: left;
     }
+	
+/* Filters */
+#nav-item {
+	color: white;
+	display: inline-block;
+	padding: 10px;
+	margin-left: 10px;
+	text-align: left;
+	}
+	
+	
 
 p a {
     color: white;
@@ -11,13 +27,11 @@ p a:hover{
 }
 
 h5 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 .collapse{
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
 }
 
 #contact{
@@ -26,7 +40,6 @@ h5 {
 
 button {
     color: #0a58ca;
-    border: white;
 }
 
 #nav-filter-label{
@@ -35,5 +48,7 @@ button {
 
 body {background-color: #87CEFA;}
 
-
-
+.search-artist-page #portrait {
+	display: block;
+	margin: 0 auto;
+}

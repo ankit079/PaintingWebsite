@@ -26,14 +26,18 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php include 'nav_bar.php'; ?>
     <div class="container">
         <div class="row">
-            <h1>Items List</h1>
+            <h1>Artist</h1>
             <div class="col-12">
                 <?php foreach ($items as $item) : ?>
+				
                     <div class="container">
-                        <div class="row">
-                            <div class="col-sm">
-                                <img src="data:image/jpeg;base64,<?= base64_encode($item['portrait']); ?>" style="width: 300px; height: auto;">
+                        <div class="row justify-content-center">
+							<div class="col-12 text-center">
+                                <img id="portrait" src="data:image/jpeg;base64,<?= base64_encode($item['portrait']); ?>" style="width: 600px; height: auto;">
+								<br>
                             </div>
+							
+							
                             <div class="col-sm">
                                 <div class="row">
                                     <div class="col-sm">
@@ -48,7 +52,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <h4>Artist</h4>
                                     </div>
                                     <div class="col-sm">
-                                        <h4><?php echo $item['artist_name']; ?></h4>
+										<h4><a href="search_painting.php?searchkey=<?php echo urlencode($item['artist_name']); ?>"><?php echo $item['artist_name']; ?></a></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -68,8 +72,8 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <form action="view_paintings.php" method="POST">
-                                            <input type="submit" class="btn btn-primary" name="return" value="Return to Paintings" />
+                                        <form action="view_artists.php" method="POST">
+                                            <input type="submit" class="btn btn-primary" name="return" value="Return to Artists" />
                                         </form>   
                                 </div>
                             </div>

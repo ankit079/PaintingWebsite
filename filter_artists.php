@@ -56,7 +56,7 @@ if (isset($_POST['lifespan'])) {
   <?php include 'nav_bar.php'; ?>
   <div class="container">
     <div class="row">
-    <h1>Items List</h1>
+    <h1>Artists</h1>
       <div class="col-12">
         <table class="table table-striped">
           <thead>
@@ -66,6 +66,7 @@ if (isset($_POST['lifespan'])) {
               <th scope="col">LifeSpan</th>
               <th scope="col">Nationality</th>
               <th scope="col">Portrait</th>
+			  <th scope="col"></th>
             </tr>
           </thead>
           <tbody>

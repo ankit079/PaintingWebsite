@@ -29,7 +29,7 @@ $pdo = null;
 	<?php include 'nav_bar.php'; ?>
 	<div class="container">
     <div class="row">
-      <h1>Items List</h1>
+      <h1>All Artists</h1>
       <div class="col-12">
         <table class="table table-striped">
           <thead>
@@ -39,6 +39,7 @@ $pdo = null;
               <th scope="col">LifeSpan</th>
               <th scope="col">Nationality</th>
               <th scope="col">Portrait</th>
+			  <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
