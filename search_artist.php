@@ -21,23 +21,23 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <title>Search Results</title>
 
-<body class="search-artist-page">
+<body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <?php include 'nav_bar.php'; ?>
+    <?php 
+    include 'nav_bar.php'; 
+    include 'artists_common.php';
+    ?>
     <div class="container">
         <div class="row">
             <h1>Artist</h1>
             <div class="col-12">
                 <?php foreach ($items as $item) : ?>
-				
+
                     <div class="container">
-                        <div class="row justify-content-center">
-							<div class="col-12 text-center">
-                                <img id="portrait" src="data:image/jpeg;base64,<?= base64_encode($item['portrait']); ?>" style="width: 600px; height: auto;">
-								<br>
+                        <div class="row">
+                            <div class="col-sm">
+                                <img width="500" height="500" src="data:image/jpeg;base64,<?= base64_encode($item['portrait']); ?>">        
                             </div>
-							
-							
                             <div class="col-sm">
                                 <div class="row">
                                     <div class="col-sm">
@@ -52,7 +52,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <h4>Artist</h4>
                                     </div>
                                     <div class="col-sm">
-										<h4><a href="search_painting.php?searchkey=<?php echo urlencode($item['artist_name']); ?>"><?php echo $item['artist_name']; ?></a></h4>
+                                        <h4><a href="search_painting.php?searchkey=<?php echo urlencode($item['artist_name']); ?>"><?php echo $item['artist_name']; ?></a></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -72,9 +72,9 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <form action="view_artists.php" method="POST">
-                                            <input type="submit" class="btn btn-primary" name="return" value="Return to Artists" />
-                                        </form>   
+                                    <form action="view_artists.php" method="POST">
+                                        <input type="submit" class="btn btn-primary" name="return" value="Return to Artists" />
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -84,4 +84,5 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </body>
+
 </html>

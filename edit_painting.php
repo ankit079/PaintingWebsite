@@ -35,23 +35,70 @@
 
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <h1>Edit painting</h1>
-        <form action="PaintingController.php?action=edit" method="POST" enctype="multipart/form-data">
-            <label for="id" aria-readonly="true">Id: </label>
-            <input type="text" name="id" id="id" readonly value=<?php echo $item['id']; ?>><br>
-            <label for="title">Title: </label>
-            <input type="text" name="title" id="title" value=<?php echo $item['title']; ?>><br>
-            <label for="finished">Finished: </label>
-            <input type="text" name="finished" id="finished" value=<?php echo $item['finished']; ?>><br>
-            <label for="media">Media: </label>
-            <input type="text" name="media" id="media" value=<?php echo $item['media']; ?>><br>
-            <label for="artist">Artist: </label>
-            <input type="text" name="artist" id="artist" value=<?php echo $item['artist']; ?>><br>
-            <label for="style">Style: </label>
-            <input type="text" name="style" id="style" value=<?php echo $item['style']; ?>><br>
-            <label for="image">Image: </label>
-            <input type="file" name="image" id="image"><br>
-            <input type="submit" name="submit" value="Update Painting">
-        </form>
+
+        <div class="container-fluid">
+            <h3>Edit painting</h3>
+            <form action="PaintingController.php?action=edit" method="POST" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="id" class="form-label" aria-readonly="true">Id: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="id" id="id" readonly value=<?php echo $item['id']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="title" class="form-label">Title: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="title" id="title" value=<?php echo $item['title']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="finished" class="form-label">Finished: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="finished" id="finished" value=<?php echo $item['finished']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="media" class="form-label">Media: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="media" id="media" value=<?php echo $item['media']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="artist" class="form-label">Artist: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="artist" id="artist" value=<?php echo $item['artist']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="style" class="form-label">Style: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" name="style" id="style" value=<?php echo $item['style']; ?>>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="image" class="form-label">Image: </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="file" class="form-control" name="image" id="image">
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" class="form-control" name="submit" value="Update Painting">
+                </div>
+            </form>
+        </div>
     </body>
     </html>

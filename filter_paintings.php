@@ -50,10 +50,13 @@ if (isset($_POST['artist'])) {
 
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <?php include 'nav_bar.php'; ?>
+  <?php 
+  include 'nav_bar.php'; 
+  include 'paintings_common.php'
+  ?>
   <div class="container">
     <div class="row">
-    <h1>Paintings</h1>
+    <h1>Filtered Paintings</h1>
       <div class="col-12">
         <table class="table table-striped">
           <thead>

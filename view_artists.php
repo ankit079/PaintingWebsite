@@ -26,8 +26,11 @@ $pdo = null;
 
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<?php include 'nav_bar.php'; ?>
-	<div class="container">
+	<?php 
+  include 'nav_bar.php'; 
+  include 'artists_common.php'  
+  ?>
+  <div class="container">
     <div class="row">
       <h1>All Artists</h1>
       <div class="col-12">
@@ -51,12 +54,16 @@ $pdo = null;
                 <td><?php echo $item['nationality']; ?></td>
 				<td><img src="data:image/jpeg;base64,<?= base64_encode($item['portrait']); ?>" width="100" height="100"></td>
                 <td>
+                  <div>
                   <form action="edit_artist.php?id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Edit" class="button" value="Edit" />
+                    <input type="submit" name="Edit" class="btn btn-info" class="button" value="Edit" />
                   </form>
+                  </div>
+                  </div>
                   <form onsubmit="return confirm('Please confirm you want to delete <?php echo $item['artist_name']; ?>?')" action="ArtistController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Delete" class="button" id="delete" value="Delete" />
+                    <input type="submit" name="Delete" class="btn btn-danger" class="button" id="delete" value="Delete" />
                   </form>
+                  <div>
                 </td>
               </tr>
             <?php endforeach; ?>

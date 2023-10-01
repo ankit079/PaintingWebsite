@@ -12,18 +12,45 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <?php include_once 'nav_bar.php'; ?>
-    <h1>Add a New Artist</h1>
+    <div class="container-fluid">
+    <h3>Add a New Artist</h3>
     <form action="ArtistController.php?action=add" enctype="multipart/form-data" method="POST">
-        <label for="artist_name">Artist Name: </label>
-        <input type="text" name="artist_name" id="artist_name" placeholder="Enter Name"><br>
-        <label for="lifespan">Life Span: </label>
-        <input type="text" name="lifespan" id="lifespan" placeholder="Enter Lifespan"><br>
-        <label for="nationality">Nationality: </label>
-        <input type="text" name="nationality" id="nationality" placeholder="Enter Nationality"><br>
-        <label for="portrait">Portrait: </label>
-        <input type="file" name="portrait" id="portrait"><br>
-        <input type="submit" value="Add Artist" name="submit">
+    <div class="row mb-3">
+            <div class="col-md-2">
+            <label for="artist_name" class="form-label">Artist Name: </label>
+            </div>
+            <div class="col-auto">
+            <input type="text" class="form-control" name="artist_name" id="artist_name" placeholder="Enter Name">
+            </div>
+        </div>       
+        <div class="row mb-3">
+            <div class="col-md-2">
+            <label for="lifespan" class="form-label">Life Span: </label>
+            </div>
+            <div class="col-auto">
+            <input type="text" class="form-control" name="lifespan" id="lifespan" placeholder="Enter Lifespan">
+            </div>
+        </div>   
+        <div class="row mb-3">
+            <div class="col-md-2">
+            <label for="nationality" class="form-label">Nationality: </label>
+            </div>
+            <div class="col-auto">
+            <input type="text" class="form-control" name="nationality" id="nationality" placeholder="Enter Nationality">
+            </div>
+        </div>   
+        <div class="row mb-3">
+            <div class="col-md-2">
+            <label for="portrait" class="form-label">Portrait: </label>
+            </div>
+            <div class="col-auto">
+            <input type="file" class="form-control" name="portrait" id="portrait">
+            </div>
+        </div>   
+        <div>  
+        <input type="submit" class="btn btn-primary" class="form-control" value="Add Artist" name="submit">
+        </div>
     </form>
+    </div>
 </body>
-
 </html>
