@@ -20,7 +20,7 @@
             <label for="artist_name" class="form-label">Artist Name: </label>
             </div>
             <div class="col-auto">
-            <input type="text" class="form-control" name="artist_name" id="artist_name" placeholder="Enter Name">
+            <input type="text" class="form-control" name="artist_name" id="artist_name" placeholder="Enter Name" required>
             </div>
         </div>       
         <div class="row mb-3">
@@ -28,7 +28,7 @@
             <label for="lifespan" class="form-label">Life Span: </label>
             </div>
             <div class="col-auto">
-            <input type="text" class="form-control" name="lifespan" id="lifespan" placeholder="Enter Lifespan">
+            <input type="text" class="form-control" name="lifespan" id="lifespan" placeholder="Enter Lifespan" required>
             </div>
         </div>   
         <div class="row mb-3">
@@ -36,7 +36,7 @@
             <label for="nationality" class="form-label">Nationality: </label>
             </div>
             <div class="col-auto">
-            <input type="text" class="form-control" name="nationality" id="nationality" placeholder="Enter Nationality">
+            <input type="text" class="form-control" name="nationality" id="nationality" placeholder="Enter Nationality" required>
             </div>
         </div>   
         <div class="row mb-3">
@@ -44,7 +44,7 @@
             <label for="portrait" class="form-label">Portrait: </label>
             </div>
             <div class="col-auto">
-            <input type="file" class="form-control" name="portrait" id="portrait">
+            <input type="file" class="form-control" name="portrait" id="portrait" required>
             </div>
         </div>   
         <div>  

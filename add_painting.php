@@ -21,7 +21,7 @@
                 <label for="title" class="form-label">Title: </label>
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title">
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" required>
             </div>
         </div>
         <div class="row mb-3">
@@ -29,7 +29,7 @@
             <label for="finished" class="form-label">Finished: </label>
             </div>
             <div class="col-auto">
-            <input type="text" class="form-control" name="finished" id="finished" placeholder="Enter Finished Date">
+            <input type="text" class="form-control" name="finished" id="finished" placeholder="Enter Finished Date" required>
             </div>
         </div>
         <div class="row mb-3">
@@ -37,7 +37,7 @@
             <label for="media" class="form-label">Media: </label>
             </div>
             <div class="col-auto">
-            <input type="text" name="media" class="form-control" id="media" placeholder="Enter media">
+            <input type="text" name="media" class="form-control" id="media" placeholder="Enter media" required>
             </div>
         </div>
         <div class="row mb-3">
@@ -45,7 +45,7 @@
             <label for="artist" class="form-label">Artist: </label>
             </div>
             <div class="col-auto">
-            <select class="form-select" name="artist" id="artist">
+            <select class="form-select" name="artist" id="artist" required>
 			<option value="" disabled selected>Select an Artist</option>
 			<?php
 			include_once 'db.php';
@@ -62,7 +62,7 @@
             <label for="style" class="form-label">Style: </label>
             </div>
             <div class="col-auto">
-            <input type="text" name="style" class="form-control" id="style" placeholder="Enter style">
+            <input type="text" name="style" class="form-control" id="style" placeholder="Enter style" required>
             </div>
         </div> 
         <div class="row mb-3">
@@ -70,7 +70,7 @@
             <label for="image" class="form-label">Image: </label>
             </div>
             <div class="col-auto">
-            <input type="file" name="image" class="form-control" id="image">
+            <input type="file" name="image" class="form-control" id="image" required>
             </div>
         </div> 
         <div>
