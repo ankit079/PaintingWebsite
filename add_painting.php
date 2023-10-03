@@ -45,7 +45,16 @@
             <label for="artist" class="form-label">Artist: </label>
             </div>
             <div class="col-auto">
-            <input type="text" name="artist" class="form-control" id="artist" placeholder="Enter artist">
+            <select class="form-select" name="artist" id="artist">
+			<option value="" disabled selected>Select an Artist</option>
+			<?php
+			include_once 'db.php';
+			$artists = $pdo->query("SELECT artist_name FROM artist")->fetchAll(PDO::FETCH_COLUMN);
+			foreach ($artists as $artist) {
+				echo "<option value=\"$artist\">$artist</option>";
+			}
+			?>
+			</select>
             </div>
         </div> 
         <div class="row mb-3">

@@ -1,4 +1,4 @@
-<?php
+<?p<?php
   require_once 'db.php';
 
 class PaintingModel {

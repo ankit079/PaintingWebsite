@@ -70,21 +70,21 @@
                     <div class="col-auto">
                         <input type="text" class="form-control" name="media" id="media" value=<?php echo $item['media']; ?>>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-2">
-                        <label for="artist" class="form-label">Artist: </label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" name="artist" id="artist" value=<?php echo $item['artist']; ?>>
-                    </div>
-                </div>
+                </div>		
+				<div class="row mb-3">
+					<div class="col-md-2">
+						<label for="style" class="form-label">Artist: </label>
+					</div>
+					<div class="col-auto">		
+						<input type="text" class="form-control" name="artist" id="artist" value=<?php echo $item['artist']; ?>>
+					</div>
+				</div>
                 <div class="row mb-3">
                     <div class="col-md-2">
                         <label for="style" class="form-label">Style: </label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control" name="style" id="style" value=<?php echo $item['style']; ?>>
+                        <input type="text" class="form-control" name="style" id="style" value=<?php echo htmlspecialchars($item['style']); ?>>
                     </div>
                 </div>
                 <div class="row mb-3">
