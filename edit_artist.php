@@ -75,7 +75,7 @@ $pdo = null;
                     <label for="portrait" class="form-label">Portrait: </label>
                 </div>
                 <div class="col-auto">
-                    <input type="file" class="form-control" name="portrait" id="portrait">
+                    <input type="file" class="form-control" name="portrait" id="portrait" required>
                 </div>
             </div>
             <div>

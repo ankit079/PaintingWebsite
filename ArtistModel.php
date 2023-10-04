@@ -18,10 +18,11 @@ class ArtistModel {
 
     public function updateArtist($id, $artist_name, $lifespan, $nationality, $portrait) {
         global $pdo;
-        $sql = "UPDATE artist SET artist_name=?, lifespan=?, nationality=?, portrait=? WHERE id=?";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam('portrait', $portrait, PDO::PARAM_LOB);
-        $stmt->execute([$artist_name, $lifespan, $nationality, $portrait, $id]);       
+            $sql = "UPDATE artist SET artist_name=?, lifespan=?, nationality=?, portrait=? WHERE id=?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam('portrait', $portrait, PDO::PARAM_LOB);
+            $stmt->execute([$artist_name, $lifespan, $nationality, $portrait, $id]);    
+
     }
 
     public function deleteArtist($id) {

@@ -18,6 +18,12 @@
         echo "Error: " . $e->getMessage();
     }
 
+    try {
+        $artists = $pdo->query("SELECT artist_name FROM artist")->fetchAll(PDO::FETCH_COLUMN);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+
     // Close the connection
     $pdo = null;
     ?>
@@ -70,15 +76,22 @@
                     <div class="col-auto">
                         <input type="text" class="form-control" name="media" id="media" value=<?php echo $item['media']; ?>>
                     </div>
-                </div>		
-				<div class="row mb-3">
-					<div class="col-md-2">
-						<label for="style" class="form-label">Artist: </label>
-					</div>
-					<div class="col-auto">		
-						<input type="text" class="form-control" name="artist" id="artist" value=<?php echo $item['artist']; ?>>
-					</div>
-				</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <label for="artist" class="form-label">Artist: </label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select" name="artist" id="artist" required>
+                            <option value=""><?php echo $item['artist']; ?></option>
+                            <?php
+                            foreach ($artists as $artist) {
+                                echo "<option value=\"$artist\">$artist</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="row mb-3">
                     <div class="col-md-2">
                         <label for="style" class="form-label">Style: </label>
@@ -92,7 +105,7 @@
                         <label for="image" class="form-label">Image: </label>
                     </div>
                     <div class="col-auto">
-                        <input type="file" class="form-control" name="image" id="image">
+                        <input type="file" class="form-control" name="image" id="image" src="data:image/jpeg;base64,<?= base64_encode($item['image']); ?>" required>
                     </div>
                 </div>
                 <div>
@@ -101,4 +114,5 @@
             </form>
         </div>
     </body>
+
     </html>
