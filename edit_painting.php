@@ -104,8 +104,7 @@
                         <label for="image" class="form-label">Image: </label>
                     </div>
                     <div class="col-auto">
-                        <input type="file" class="form-control" name="image" id="image">
-
+                        <input type="file" class="form-control" name="image" id="image" required>
                         <div>
                             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($item['image']); ?>" width="100" height="100"/>
                         </div>
