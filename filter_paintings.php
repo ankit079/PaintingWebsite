@@ -83,10 +83,10 @@ if (isset($_POST['artist'])) {
                 <td><img src="data:image/jpeg;base64,<?= base64_encode($item['image']); ?>" width="100" height="100"></td>
                 <td>
                   <form action="edit_painting.php?id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Edit" class="button" value="Edit" />
+                    <input type="submit" name="Edit" class="btn btn-info" class="button" value="Edit" />
                   </form>
                   <form action="PaintingController.php?action=delete&id=<?php echo $item['id']; ?>" method="POST">
-                    <input type="submit" name="Delete" class="button" value="Delete"/>
+                    <input type="submit" name="Delete" class="btn btn-danger" class="button" value="Delete"/>
                   </form>
                 </td>
               </tr>
