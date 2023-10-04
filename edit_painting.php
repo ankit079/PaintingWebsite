@@ -82,8 +82,7 @@
                         <label for="artist" class="form-label">Artist: </label>
                     </div>
                     <div class="col-auto">
-                        <select class="form-select" name="artist" id="artist" required>
-                            <option value=""><?php echo $item['artist']; ?></option>
+                        <select class="form-select" name="artist" value="<?php echo $item['artist']; ?>" id="artist" required>
                             <?php
                             foreach ($artists as $artist) {
                                 echo "<option value=\"$artist\">$artist</option>";
@@ -105,12 +104,15 @@
                         <label for="image" class="form-label">Image: </label>
                     </div>
                     <div class="col-auto">
-                        <input type="file" class="form-control" name="image" id="image" src="data:image/jpeg;base64,<?= base64_encode($item['image']); ?>" required>
+                        <input type="file" class="form-control" name="image" id="image">
+
+                        <div>
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($item['image']); ?>" width="100" height="100"/>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <input type="submit" class="btn btn-primary" class="form-control" name="submit" value="Update Painting">
-                </div>
+                    <div>
+                        <input type="submit" class="btn btn-primary" class="form-control" name="submit" value="Update Painting">
+                    </div>
             </form>
         </div>
     </body>
